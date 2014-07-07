@@ -1,0 +1,18 @@
+<p>
+  <%= link_to 'Add Musical', new_musical_path %>
+</p>
+
+<div class="table">
+  <table>
+    <th>Name of Musical</th>
+    <th>....</th>
+    <th>Actor's Name</th>
+    <% @musicals.each do |musical| %>
+      <tr>
+        <td><%= musical.name %></td>
+        <td>....</td>
+        <td><%= musical.actor %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

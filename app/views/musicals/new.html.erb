@@ -1,0 +1,13 @@
+<%= form_for @musical do |f| %>
+<p>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</p>
+  <p>
+    <%= f.label :actor %>
+    <%= f.text_field :actor %>
+  </p>
+  <p>
+    <%= f.submit 'Create Musical' %>
+  </p>
+<% end %>
