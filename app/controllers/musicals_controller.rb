@@ -32,6 +32,12 @@ class MusicalsController < ApplicationController
     redirect_to musicals_path
   end
 
+  def destroy
+    @musical = Musical.find(params[:id]).delete
+
+    redirect_to musicals_path
+  end
+
   private
   def musical_strong_params
     params.require(:musical).permit(:name, :actor)

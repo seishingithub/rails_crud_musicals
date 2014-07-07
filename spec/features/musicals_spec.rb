@@ -34,6 +34,22 @@ feature 'Manage Musical CRUD' do
     expect(page).to have_no_content 'Gene Kelly'
     expect(page).to have_content 'The Wizard of Oz'
     expect(page).to have_content 'Judy Garland'
+  end
 
+  scenario 'User can musicals from a list' do
+    visit '/'
+    click_on 'Musicals!'
+    click_on 'Add Musical'
+    fill_in 'Name', with: 'Singing in the Rain'
+    fill_in 'Actor', with: 'Gene Kelly'
+    click_on 'Create Musical'
+    expect(page).to have_content 'Singing in the Rain'
+    expect(page).to have_content 'Gene Kelly'
+    click_on 'Singing in the Rain'
+    expect(page).to have_content 'Singing in the Rain'
+    expect(page).to have_content 'Gene Kelly'
+    click_on 'Delete Musical'
+    expect(page).to have_no_content 'Singing in the Rain'
+    expect(page).to have_no_content 'Gene Kelly'
   end
 end
