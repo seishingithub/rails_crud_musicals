@@ -9,7 +9,7 @@
     <th>Actor's Name</th>
     <% @musicals.each do |musical| %>
       <tr>
-        <td><%= musical.name %></td>
+        <td><%= link_to "#{musical.name}", musical_path(musical) %></td>
         <td>....</td>
         <td><%= musical.actor %></td>
       </tr>

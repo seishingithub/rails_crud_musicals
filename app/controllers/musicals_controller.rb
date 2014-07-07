@@ -17,6 +17,21 @@ class MusicalsController < ApplicationController
     end
   end
 
+  def show
+    @musical = Musical.find(params[:id])
+  end
+
+  def edit
+    @musical = Musical.find(params[:id])
+  end
+
+  def update
+    @musical = Musical.find(params[:id])
+    @musical.update_attributes!(musical_strong_params)
+
+    redirect_to musicals_path
+  end
+
   private
   def musical_strong_params
     params.require(:musical).permit(:name, :actor)
